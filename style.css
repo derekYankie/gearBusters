@@ -1,0 +1,107 @@
+ html, body {
+    margin: 0;
+    padding: 0;
+    background-color:rgba(255,255,255,1);;
+    
+}
+.header {
+background-color:#3399ff;
+   opacity:0.9;
+   box-shadow:3px 5px 5px 5px #404040;
+   margin-bottom: 0px;
+
+   
+}
+
+h1{
+    padding-top:90px; 
+    margin-bottom: 0px;
+    text-align: center;
+}
+.jumbotron {
+    /*background:dodgerblue;*/
+    display:no-repeat;
+    position: center center;
+    background-size: cover;
+    height: 800px;
+    
+}
+.mySlides{
+    width:1190px; 
+    padding-top: 5px;
+
+}
+
+
+.nav {
+     
+    list-style-type: none;
+    padding: 100px 0px 40px 30px;
+    margin: 0px 0px 0px 0px;
+   
+}
+.nav li {
+    color: #fff;
+    display: block;
+    font-family:'Pacifico',cursive,'Raleway', sans-serif;
+    font-weight: 100;
+    font-size: 35px;
+    letter-spacing:3px;
+    max-width:570px;
+    margin-left:305px;
+    
+}
+span{
+    margin-left:40px;
+}
+
+h2{
+ margin-top:0px;
+ text-align:center;
+ color:white;
+ margin-bottom:20px;
+ opacity:0.0;/*remove for visibility*/
+}
+
+a
+{
+    padding-left:88px;
+    font-size:518px;
+    opacity:0.0;/*remove for visibility*/
+}
+
+.btn-default {
+   
+    font-family:'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1.3px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    
+}
+
+.footer {
+    background-color: #3399ff;
+    color: #fff;
+    padding: 37px 0;
+    box-shadow:0px 0px 0px 3px #808080;
+}
+.footer p {
+    font-family:'Raleway', sans-serif;
+    
+    font-size: 13px;
+}
+.ionicons{
+    font-size:38px;
+}
+}
+@media (max-width: 500px) {
+    .main h1 {
+        font-size: 50px;
+        padding: 0 1px;
+    }
+    
+}
