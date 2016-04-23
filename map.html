@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--built from mapbox examples , can't really move css or js-->
+    <meta charset=utf-8/>
+    <title>fishackathon</title>
+    <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet'/>
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+    .ui-button {
+    background:#3887BE;
+    color:#FFF;
+    display:block;
+    position:absolute;
+    top:50%;left:50%;
+    width:160px;
+    margin:-20px 0 0 -80px;
+    z-index:100;
+    text-align:center;
+    padding:10px;
+    border:1px solid rgba(0,0,0,0.4);
+    border-radius:3px;
+    }
+    .ui-button:hover {
+    background:#3074a4;
+    color:#fff;
+    }
+    </style>
+
+    <a href='#' id='geolocate' class='ui-button'>add point</a>
+    <div id='map'></div>
+
+    <script>
+        L.mapbox.accessToken = 'pk.eyJ1IjoiemhpayIsImEiOiJjaW1pbGFpdHQwMGNidnBrZzU5MjF5MTJiIn0.N-EURex2qvfEiBsm-W9j7w';
+    var geolocate = document.getElementById('geolocate');
+    var map = L.mapbox.map('map', 'mapbox.streets');
+    var myLayer = L.mapbox.featureLayer().addTo(map);
+
+    //find location and request
+    if (!navigator.geolocation) {
+    geolocate.innerHTML = 'Geolocation is not available';
+    } else {
+    geolocate.onclick = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    map.locate();
+    };
+    }
+    // get position add a single marker with form
+    map.on('locationfound', function(e) {
+
+    //map.fitBounds(e.bounds); - zoom in, find a way so it does a small scale
+    myLayer.setGeoJSON({
+    type: 'Feature',
+    geometry: {
+    type: 'Point',
+    coordinates: [e.latlng.lng, e.latlng.lat]
+    },
+    properties: {
+    'title': '<form action="#" method="POST"><fieldset><label>name or id</label><br><input type="text" name="name"></fieldset><fieldset><label>input type</label><br></input><input type="text" name="dis"></input></fieldset><input class="button" type="submit" value="Submit"/></form>',
+    //some how send cords with form data
+    'marker-color': '#ff8888',
+    'marker-symbol': 'star'
+    }
+    });
+
+
+    // hide the button after everything is done
+    geolocate.parentNode.removeChild(geolocate);
+    console.log(e.latlng.lng)
+    console.log(e.latlng.lat)
+    });
+
+    // error
+    map.on('locationerror', function() {
+    geolocate.innerHTML = 'Position could not be found';
+    });
+    var featureLayer = L.mapbox.featureLayer()
+    .loadURL('http://9a6cf3b9.ngrok.io/')
+
+    // refresh
+    .on('ready', run)
+    .addTo(map);
+    function run() {
+    window.setTimeout(function() {
+    featureLayer.loadURL('http://9a6cf3b9.ngrok.io/');
+    }, 5000);
+    }
+
+    </script>
+  </body>
+</html>
