@@ -1,0 +1,146 @@
+ html, body {
+    margin: 0;
+    padding: 0;
+    background-color:rgba(255,255,255,1);;
+    
+}
+.header {
+background-color:#1B1B1B;
+   opacity:0.9;
+   box-shadow:3px 5px 5px 5px #404040;
+   margin-bottom: 0px;
+
+   
+}
+
+h1{
+    padding-top:90px; 
+    margin-bottom: 0px;
+    text-align: center;
+}
+.jumbotron {
+    /*background:dodgerblue;*/
+    display:no-repeat;
+    position: center center;
+    background-size: cover;
+    height: 800px;
+    
+}
+
+
+
+.nav {
+     
+    list-style-type: none;
+    padding: 100px 0px 40px 30px;
+    margin: 0px 0px 0px 0px;
+   
+}
+.nav li {
+    color: #fff;
+    display: block;
+    font-family:'Pacifico',cursive,'Raleway', sans-serif;
+    font-weight: 100;
+    font-size: 35px;
+    letter-spacing:3px;
+    max-width:570px;
+    margin-left:305px;
+    
+}
+span{
+    margin-left:40px;
+}
+
+h2{
+ margin-top:0px;
+ text-align:center;
+ color:white;
+ margin-bottom:20px;
+ opacity:0.0;/*remove for visibility*/
+}
+.btn-primary {
+    background-color: #F89829;
+    /*Transparent color:#F89829*/
+    color: #fff;
+    font-family:'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1.3px;
+    padding: 20px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    /*Adds a shadow to the button*/
+    box-shadow:3px 3px 1px 1px #E37025;
+}
+
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+body, figure { 
+  margin: 0; background: #101010;
+  font-family: Istok Web, sans-serif;
+  font-weight: 100;
+}
+div#captioned-gallery { 
+  width: 100%; overflow: hidden; 
+}
+figure.slider { 
+  position: relative; width: 500%;
+  font-size: 0; animation: 12s slidy infinite; 
+}
+figure.slider figure { 
+  width: 20%; height: auto;
+  display: inline-block;  position: inherit; 
+}
+figure.slider img { width: 100%; height: auto; }
+figure.slider figure figcaption { 
+  position: absolute; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  color: #fff; width: 100%;
+  font-size: 2rem; padding: .6rem; 
+}
+
+
+.btn-default {
+   
+    font-family:'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1.3px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    
+}
+
+.footer {
+    background-color: #1B1B1B;
+    color: #fff;
+    padding: 10px 0;
+    
+}
+.footer p {
+    font-family:'Raleway', sans-serif;
+    
+    font-size: 13px;
+}
+.ionicons{
+    font-size:38px;
+}
+}
+@media (max-width: 500px) {
+    .main h1 {
+        font-size: 50px;
+        padding: 0 1px;
+    }
+    
+}

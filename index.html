@@ -2,6 +2,8 @@
 <html>
 
     <head>
+        <!--Redirect Script after time-->
+        <meta http-equiv="refresh" content="4; url=http://gearbusters.ga/landingPage.html" />
         <!--Google web font-->
         <link href='https://fonts.googleapis.com/css?family=Lobster|Pacifico' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Raleway:400, 600' rel='stylesheet' type='text/css'>
@@ -11,7 +13,7 @@
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
        <!--ionIcons-->
        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-         <title>GHOST-GEAR</title>
+         <title>GEAR-BUSTER's</title>
     </head>
 
     <body>
@@ -19,7 +21,8 @@
             <!--Top HEADER-->
            
                 
-                    <h1><i>Ghost-GEAR</i></h1>
+                    <img src="images/5_White_logo_on_black_526x75.png" alt = "GEAR-BUSTER">
+                    
                     
                 
             
@@ -27,61 +30,28 @@
 
         <div class="jumbotron">
            
-                <div class="main">
-              
-             <div class="slideShow" style="max-width:800px;position:relative">
-
-<img class="mySlides" src="images/fishing-village-port-net-large.jpg">
-<img class="mySlides" src="images/fishing-fishing-tackle-large.jpg">
-<img class="mySlides" src="img_mountains.jpg" style="width:100%">
-<img class="mySlides" src="img_forest.jpg" style="width:100%">
-<!---Left floating button-->
-<a class="w3-btn-floating" style="position:absolute;top:45%;left:0" onclick="plusDivs(-1)">❮</a>
-<!---Right floating button-->
-<a class="w3-btn-floating" style="position:absolute;top:45%;right:200px; background-color:blue" onclick="plusDivs(1)">❯</a>
-
+               <div id="captioned-gallery">
+  <figure class="slider">
+    <figure>
+      <img src="images/fishing-fishing-tackle-large.jpg" alt>
+      <figcaption>Lost Fisihing Pole</figcaption>
+    </figure>
+    <figure>
+      <img src="images/fishing-village-port-net-large.jpg" alt>
+      <figcaption>Lost fishing net in a village</figcaption>
+    </figure>
+    <figure>
+      <img src="images/tumblr_nk19g7yIdZ1qfirfao1_1280.jpg" alt>
+      <figcaption>Lost fishing net at the docks</figcaption>
+    </figure>
+  </figure>
 </div>
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-</script>
-
-                   
-              
-                     
-                </div>
-                
-            
-        </div>
+          
             <!--BOTTOM Footer-->
         <div class="footer">
-            <div class="container">
-                
-                
-                <!--fa(font awesome) Twitter glyph  fa-5x (5 times regular size)-->
-                    <p><i class="fa fa-twitter fa-3x"></i>@GhostGEAR</p>
-            <!--Instagram glyph-->
-            <p><i class="fa fa-instagram fa-3x"></i>   @GhostGEAR</p>
-    <!--Snapchat glyph-->
-    <p><i class="ionicons ion-social-snapchat-outline"></i> GhostGEAR</p>
-            <p>&copy; Derek Afriyie 2016</p>
-                    <!--Add an instagram glyph here-->
-                    <!--Add a facebook glyph here-->
+            <div class="container">    
+            <p>&copy; Gear Busters 2016</p?
                 </div>
-                </div>
+				</div>
+    </body>
 </html>
