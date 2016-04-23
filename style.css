@@ -26,11 +26,7 @@ h1{
     height: 800px;
     
 }
-.mySlides{
-    width:1190px; 
-    padding-top: 5px;
 
-}
 
 
 .nav {
@@ -61,6 +57,20 @@ h2{
  color:white;
  margin-bottom:20px;
  opacity:0.0;/*remove for visibility*/
+}
+.btn-primary {
+    background-color: #F89829;
+    /*Transparent color:#F89829*/
+    color: #fff;
+    font-family:'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1.3px;
+    padding: 20px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    /*Adds a shadow to the button*/
+    box-shadow:3px 3px 1px 1px #E37025;
 }
 
 @keyframes slidy {
