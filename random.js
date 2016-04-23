@@ -1,41 +1,54 @@
 var random = require('geojson-random');
 var express = require('express');
 var app = express();
+
+//sqlite3 is just a pain
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('fish.db');
 
-
-db.close();
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       
+app.use(bodyParser.urlencoded({    
+  extended: true
+})); 
 
 var path = require('path');
 
+//geojson for the map
 app.get('/', function (req, res) {
-  //res.send(random.point(20));
+  db.each("SELECT rowid AS id, name FROM fish", function(err, row) {
+  	  console.log(name)
+      console.log(row.name + ": " + row.name);
+  });
+  //res.send(random.point(20));  ---  random points
   res.sendFile(path.join(__dirname + '/test.json'));
 });
 
+//map route
 app.get('/map', function (req, res) {
   res.sendFile(path.join(__dirname + '/map.html'));
 });
 
-app.post('/map', function(req, res, next) {
-  name = req.body.name;
-  dis = req.body.dis;
-  lat = req.body.lat;
-  long = req.body.long;
-  console.log(lat)
-  console.log(long)
-  sqlRequest = "INSERT INTO 'fish' (name, dis,lat, long)"
-  db.run(sqlRequest, function(err) {
-    if(err !== null) {
-      next(err);
-    }
-    else {
-      res.redirect('back');
-    }
-  });
+//form route
+app.get('/form', function (req, res) {
+  res.sendFile(path.join(__dirname + '/form.html'));
 });
 
+//receive form data
+app.post('/form', function(req, res, next) {
+  var name = req.body.name;
+  var dis = req.body.dis;
+  var lat = req.body.lat;
+  var long = req.body.long;
+  console.log(name)
+  console.log(lat)
+  //bug - says that there is no such collum as any of these
+  var stmt = db.prepare("INSERT INTO fish VALUES (name, dis, lat, long)");
+
+  stmt.finalize();
+});
+
+
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('listening on port 3000!');
 });

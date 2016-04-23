@@ -32,7 +32,7 @@
     }
     </style>
 
-    <a href='#' id='geolocate' class='ui-button'>add point</a>
+    <!-- <a href='#' id='geolocate' class='ui-button'>add point</a> -->
     <div id='map'></div>
 
     <script>
@@ -41,40 +41,40 @@
     var map = L.mapbox.map('map', 'mapbox.streets');
     var myLayer = L.mapbox.featureLayer().addTo(map);
 
-    //find location and request
-    if (!navigator.geolocation) {
-    geolocate.innerHTML = 'Geolocation is not available';
-    } else {
-    geolocate.onclick = function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    map.locate();
-    };
-    }
-    // get position add a single marker with form
-    map.on('locationfound', function(e) {
+    // //find location and request
+    // if (!navigator.geolocation) {
+    // geolocate.innerHTML = 'Geolocation is not available';
+    // } else {
+    // geolocate.onclick = function (e) {
+    // e.preventDefault();
+    // e.stopPropagation();
+    // map.locate();
+    // };
+    // }
+    // // get position add a single marker with form
+    // map.on('locationfound', function(e) {
 
-    //map.fitBounds(e.bounds); - zoom in, find a way so it does a small scale
-    myLayer.setGeoJSON({
-    type: 'Feature',
-    geometry: {
-    type: 'Point',
-    coordinates: [e.latlng.lng, e.latlng.lat]
-    },
-    properties: {
-    'title': '<form action="#" method="POST"><fieldset><label>name or id</label><br><input type="text" name="name"></fieldset><fieldset><label>input type</label><br></input><input type="text" name="dis"></input></fieldset><input class="button" type="submit" value="Submit"/></form>',
-    //some how send cords with form data
-    'marker-color': '#ff8888',
-    'marker-symbol': 'star'
-    }
-    });
+    // //map.fitBounds(e.bounds); - zoom in, find a way so it does a small scale
+    // myLayer.setGeoJSON({
+    // type: 'Feature',
+    // geometry: {
+    // type: 'Point',
+    // coordinates: [e.latlng.lng, e.latlng.lat]
+    // },
+    // properties: {
+    // 'title': 'you are here',
+    // //some how send cords with form data
+    // 'marker-color': '#ff8888',
+    // 'marker-symbol': 'star'
+    // }
+    // });
 
 
-    // hide the button after everything is done
-    geolocate.parentNode.removeChild(geolocate);
-    console.log(e.latlng.lng)
-    console.log(e.latlng.lat)
-    });
+    // // hide the button after everything is done
+    // geolocate.parentNode.removeChild(geolocate);
+    // console.log(e.latlng.lng)
+    // console.log(e.latlng.lat)
+    // });
 
     // error
     map.on('locationerror', function() {
