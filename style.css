@@ -58,20 +58,7 @@ h2{
  margin-bottom:20px;
  opacity:0.0;/*remove for visibility*/
 }
-.btn-primary {
-    background-color: #F89829;
-    /*Transparent color:#F89829*/
-    color: #fff;
-    font-family:'Raleway', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    letter-spacing: 1.3px;
-    padding: 20px 40px;
-    text-decoration: none;
-    text-transform: uppercase;
-    /*Adds a shadow to the button*/
-    box-shadow:3px 3px 1px 1px #E37025;
-}
+
 
 @keyframes slidy {
 0% { left: 0%; }
@@ -94,7 +81,7 @@ div#captioned-gallery {
 }
 figure.slider { 
   position: relative; width: 500%;
-  font-size: 0; animation: 12s slidy infinite; 
+  font-size: 0; animation: 17s slidy infinite; 
 }
 figure.slider figure { 
   width: 20%; height: auto;
@@ -103,29 +90,17 @@ figure.slider figure {
 figure.slider img { width: 100%; height: auto; }
 figure.slider figure figcaption { 
   position: absolute; bottom: 0;
-  background: rgba(0,0,0,0.4);
+  background-image:url(images/5_White_logo_on_black_526x75.png); 
+  background-color:#1B1B1B;
+  /*background: rgba(0,0,0,0.4);*/
   color: #fff; width: 100%;
   font-size: 2rem; padding: .6rem; 
-}
-
-
-.btn-default {
-   
-    font-family:'Raleway', sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    letter-spacing: 1.3px;
-    padding: 10px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    display: inline-block;
-    
 }
 
 .footer {
     background-color: #1B1B1B;
     color: #fff;
-    padding: 10px 0;
+    padding: 37px 0;
     
 }
 .footer p {
